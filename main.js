@@ -96,13 +96,12 @@ function displayExistingTasks() {
 
     deleteButton.onclick = function () {
       // Ask user for confirmation before deleting the task
-      var deletequestion = confirm(
-        `Are you sure you want to delete ${singleTask.innerHTML}`
+      const confirmDelete = confirm(
+        "Are you sure you want to delete this task?"
       );
-      if (deletequestion === "no") {
-        return;
+      if (confirmDelete) {
+        deleteTask(index, divTag);
       }
-      deleteTask(index, divTag);
     };
 
     editbutton.onclick = function () {
