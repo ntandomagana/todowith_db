@@ -161,7 +161,6 @@ function taskDone(index, taskElement) {
     taskElement.style.textDecoration = "line-through";
     taskElement.style.color = "gray";
     
-
 }
 function addToStorage(){
     localStorage.setItem("todolist", JSON.stringify(arr));
