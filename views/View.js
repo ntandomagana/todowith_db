@@ -4,7 +4,7 @@ import { addTask_, arr, editTaskText, taskDone_ } from "../controllers/functiona
 displayExistingTasks();
 
 function addTask() {
-  var task = document.getElementById("input-box");
+  let task = document.getElementById("input-box");
 
   if (task.value.trim() === "") {
     alert("Please enter a task");
@@ -14,12 +14,12 @@ function addTask() {
   const taskObject = addTask_(task);
   reloadFunct();
 
-  var input = document.getElementById("myTodolist");
-  var divTag = document.createElement("div");
-  var singleTask = document.createElement("li");
-  var deleteButton = document.createElement("button");
-  var editbutton = document.createElement("button");
-  var divButton = document.createElement("div");
+  let input = document.getElementById("myTodolist");
+  let divTag = document.createElement("div");
+  let singleTask = document.createElement("li");
+  let deleteButton = document.createElement("button");
+  let editbutton = document.createElement("button");
+  let divButton = document.createElement("div");
 
   deleteButton.className = "delete";
   editbutton.className = "edit";
@@ -62,16 +62,16 @@ function addTask() {
 }
 
 async function displayExistingTasks() {
-  var input = document.getElementById("myTodolist");
+  let input = document.getElementById("myTodolist");
   input.innerHTML = ""; // Clear the list to avoid duplication
 
   if ((await arr) != undefined) {
     arr.forEach((taskValue, index) => {
-      var divTag = document.createElement("div");
-      var singleTask = document.createElement("li");
-      var deleteButton = document.createElement("button");
-      var editbutton = document.createElement("button");
-      var divButton = document.createElement("div");
+      let divTag = document.createElement("div");
+      let singleTask = document.createElement("li");
+      let deleteButton = document.createElement("button");
+      let editbutton = document.createElement("button");
+      let divButton = document.createElement("div");
 
       deleteButton.className = "delete";
       editbutton.className = "edit";

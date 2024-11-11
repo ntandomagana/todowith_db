@@ -2,8 +2,10 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import path from 'path';
+import dotenv from 'dotenv';
 
 const __dirname = path.resolve();
+dotenv.config();
 
 
 
@@ -23,11 +25,11 @@ app.use(bodyParser.json());
 
 
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "todolistdatabase",
-  password: "",
-  port: 5432,
+  user: process.env.user,
+  host: process.env.host,
+  database: process.env.database,
+  password: process.env.password,
+  port: process.env.port,
 });
 
 let tableName = process.argv[2] || "myTodoTable";

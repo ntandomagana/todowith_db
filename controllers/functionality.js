@@ -9,7 +9,7 @@ async function populateArray() {
 }
 
 function addTask_(task) {
-  var taskValue = task.value;
+  let taskValue = task.value;
 
   let taskObject = {
     id: arr.length,
@@ -23,9 +23,9 @@ function addTask_(task) {
 }
 
 function editTaskText(taskObject) {
-  
-  
-  var newTaskValue = prompt("Edit your task:", taskObject.task);
+
+
+ let newTaskValue = prompt("Edit your task:", taskObject.task);
 
   if (newTaskValue !== null && newTaskValue.trim() !== "") {
     let newObject = {

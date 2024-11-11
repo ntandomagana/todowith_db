@@ -3,9 +3,9 @@ import { arr, addTask_, taskDone_,editTaskText } from "../controllers/functional
 import http from "http";
 import { sendTask, deleteAllTasks } from "../controllers/ApiFront.js";
 
-jest.unstable_mockModule("../controllers/functionality.js", () => ({
-  sendTask: jest.fn(),
-}));
+// jest.unstable_mockModule("../controllers/functionality.js", () => ({
+//   sendTask: jest.fn(),
+// }));
 
 
 
@@ -41,7 +41,7 @@ describe("[addTask]", () => {
     expect(addTask_).toBeDefined();
     expect( typeof addTask_).toEqual("function");
     // sendTask.unstable_mockModule("");
-    addTask_(taskValue);
+    addTaskText(taskValue);
     expect(arr.length).toEqual(1);
   });
 });
@@ -62,35 +62,49 @@ describe("[addTask]", () => {
 
 // });
 
-describe("[editTask]", () => {
+ describe("[editTask]", () => {
+  beforeAll(() => {
+    global.prompt = jest.fn();
+    global.alert = jest.fn();
+  });
+
    beforeEach(() => {
      arr.length = 0;
-     deleteAllTasks();
+    //  deleteAllTasks();
+     global.prompt = jest.fn();
    });
   
-  afterEach(() => {
-    arr.length = 0;
-    deleteAllTasks();
-  });
+  // afterEach(() => {
+  //   arr.length = 0;
+  //   deleteAllTasks();
+  // });
 
-  global.prompt = jest.fn();
+  
 
-  test("Array should have an updated element", () => {
-    let task = "new Task";
-    // let taskObject = {
-    //   id: arr.length,
-    //   task: "new Task ",
-    //   isdone: false,
-    // };
-    // const taskValue = "new Task";
-    console.log(task);
+//   test("Array should have an updated element", () => {
+//     let task = "new Task";
 
-    prompt.mockReturnValueOnce("Alice");
-    let myTask = addTask_(task);
-    editTaskText(myTask);
-    console.log(arr);
-    expect(arr[0].task).toEqual("Alice");
-  });
+//     console.log(task);
+
+//     let myTask = addTask_(task);
+
+//     console.log(arr);
+//     console.log(prompt);
+//     editTaskText(myTask);
+    
+//     expect(arr[0].task).toEqual("Alice");
+//   });
+// });
+
+ test("should show alert for invalid name and prompt again", () => {
+  let task = "new Task";
+  // prompt
+  //   .mockReturnValueOnce("John");
+
+  const result = addTask_(task);
+   editTaskText(result);
+  console.log(arr);
+  expect(arr[0].task).toBe("John");
 });
 
 // describe("[taskDone]", () => {
@@ -102,4 +116,4 @@ describe("[editTask]", () => {
 //     // expect(isDone_()).toBeDefined();
 //     expect(arr[0].isDone).toEqual(true);
 //   });
-// });
+});
