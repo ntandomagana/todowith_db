@@ -62,7 +62,7 @@ function sendTask(taskObj) {
       },
       body: JSON.stringify({ id: id }),
     };
-    fetch(http://localhost:3000/deleteTask, options)
+    fetch("http://localhost:3000/deleteTask", options)
       .then((response) => response.json())
       .then((data) => {
         return data;
@@ -76,7 +76,7 @@ function sendTask(taskObj) {
         "Content-Type": "application/json;charset=utf-8",
       },
     };
-    fetch(http://localhost:3000/deleteAll, options)
+    fetch("http://localhost:3000/deleteAll", options)
       .then((response) => response.json())
       .then((data) => {
         return data;
