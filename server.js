@@ -1,5 +1,5 @@
 import http from "http";
-import { app } from "./expressRoutes.js";
+import {app} from './routes/expressRoutes.js';
 
 const port = 3000;
 
