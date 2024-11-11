@@ -46,13 +46,10 @@ function addTask() {
   input.appendChild(divTag);
 
   deleteButton.onclick = function () {
-    var deletequestion = prompt(
-      `Are you sure you want to delete ${singleTask.innerHTML}? Type yes or no. `
-    );
-    if (deletequestion === "no") {
-      return;
-    }
-    deleteTask(index, divTag);
+    const confirmDelete = confirm ("Are you sure you want to delete?");
+    if (confirmDelete) {
+      deleteTask(index, divTag);
+    };
   };
 
   editbutton.onclick = function () {
