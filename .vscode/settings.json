@@ -1,3 +1,25 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5502,
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "nt_db",
+      "database": "nt_db",
+      "username": "postgres",
+      "password": ""
+    },
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "todolist_db",
+      "database": "todolist_db",
+      "username": "postgres",
+      "password": ""
+    }
+  ]
 }

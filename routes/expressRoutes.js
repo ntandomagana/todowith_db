@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
-  database: "todolistdatabase",
+  database: "todolist_db",
   password: "",
   port: 5432,
 });

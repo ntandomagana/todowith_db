@@ -38,9 +38,7 @@ function addTask() {
   input.appendChild(divTag);
 
   deleteButton.onclick = function () {
-    let deletequestion = confirm(
-      `Are you sure you want to delete ${singleTask.innerHTML}? Press ok to delete. `
-    );
+    let deletequestion = confirm (`Are you sure you want to delete this task?. `);
     if (deletequestion) {
       deleteTask(taskObject.id);
       location.reload();
@@ -94,7 +92,7 @@ async function displayExistingTasks() {
 
       deleteButton.onclick = function () {
         let deletequestion = confirm(
-          `Are you sure you want to delete ${singleTask.innerHTML}? press ok to delete. `
+          `Are you sure you want to delete this task? `
         );
         if (deletequestion) {
           deleteTask(taskValue.id);
@@ -118,10 +116,10 @@ async function displayExistingTasks() {
 }
 
 function clearAll() {
-  const answer = prompt(
-    "Are you sure you want to clear all tasks? answer yes/no"
+  const confirmClear = confirm(
+    "Are you sure you want to clear all tasks?"
   );
-  if (answer === "yes") {
+  if (confirmClear) {
     deleteAllTasks();
   }
   location.reload();
